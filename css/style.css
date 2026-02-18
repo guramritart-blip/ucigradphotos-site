@@ -700,7 +700,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .pricing-grid--2 {
@@ -715,7 +715,11 @@ p {
   border: 1px solid var(--border);
   transition: all 0.35s var(--ease);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
+.pricing-card .pricing-features { flex: 1; }
+.pricing-card .btn { margin-top: auto; }
 
 .pricing-card:hover {
   border-color: var(--border-hover);
@@ -1096,9 +1100,9 @@ p {
   margin-bottom: 0.75rem;
 }
 
-.spots-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.spots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
 .spot-card img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  width: 100%; aspect-ratio: 3/4; object-fit: cover;
   border-radius: var(--r-lg); margin-bottom: 0.75rem;
   transition: all 0.4s var(--ease);
   filter: brightness(0.9);
