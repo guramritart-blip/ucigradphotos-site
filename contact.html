@@ -11,6 +11,9 @@
   <meta property="og:url" content="https://www.ucigradphotos.com/contact.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://www.ucigradphotos.com/images/portfolio/img-009.jpg">
+  <meta property="og:site_name" content="UCI Grad Photos">
+  <meta name="twitter:image" content="https://www.ucigradphotos.com/images/portfolio/img-009.jpg">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
@@ -24,34 +27,74 @@
   <section class="section-padding" style="padding-top:10rem;">
     <div class="container text-center">
       <span class="section-label">Book</span>
-      <h1>Book Your Session</h1>
-      <p class="lead mx-auto" style="margin-top:1rem;">Pick a date and time that works for you. Graduation season spots fill up fast, so book early.</p>
+      <h1>Select Your Campus</h1>
+      <p class="lead mx-auto" style="margin-top:1rem;">Choose your school to see available dates. Graduation season spots fill up fast, so book early.</p>
     </div>
   </section>
 
   <section class="section-padding" style="padding-top:0;">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="fade-in">
-          <h2>Meet Your Photographer</h2>
-          <p style="margin:1.5rem 0;">Hey, I'm Guramrit Malhotra. UCI alum, class of 2020. I've been shooting graduation portraits for 7 years now, and I've had the privilege of capturing this milestone for hundreds of graduates across Southern California.</p>
-          <p style="margin-bottom:1.5rem;">My style is clean and professional. I use off-camera lighting to make sure your photos look polished no matter the conditions. I know the best spots on campus, the best times to shoot, and how to make you feel comfortable in front of the camera.</p>
-          <p style="margin-bottom:2rem;">Whether it's just you, a duo with your best friend, or a group session with family, I'm here to make your graduation photos something you'll be proud of for years to come.</p>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">&#128222;</div>
-            <div><strong>Phone</strong><br><a href="tel:9493128300">(949) 312-8300</a></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">&#9993;</div>
-            <div><strong>Email</strong><br><a href="mailto:guramrit.art@gmail.com">guramrit.art@gmail.com</a></div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">&#128247;</div>
-            <div><strong>Instagram</strong><br><a href="https://www.instagram.com/ucigradpics/" target="_blank" rel="noopener">@ucigradpics</a> &amp; <a href="https://www.instagram.com/guramrit.art/" target="_blank" rel="noopener">@guramrit.art</a></div>
+    <div class="container container--narrow">
+      <div id="booking-widget" class="fade-in">
+        <!-- Panel 1: Campus Selector -->
+        <div id="campus-selector">
+          <div class="campus-cards campus-cards--3">
+            <button class="campus-card" data-campus="uci">
+              <div class="campus-card-img"><img src="images/portfolio/img-030.jpg" alt="UCI graduation photo" loading="lazy"></div>
+              <div class="campus-card-content"><span class="campus-card-name">UC Irvine</span><span class="campus-card-months">May &amp; June 2026</span></div>
+            </button>
+            <button class="campus-card" data-campus="usc">
+              <div class="campus-card-img"><img src="images/portfolio/img-025.jpg" alt="USC graduation photo" loading="lazy"></div>
+              <div class="campus-card-content"><span class="campus-card-name">USC</span><span class="campus-card-months">April 2026</span></div>
+            </button>
+            <button class="campus-card" data-campus="other">
+              <div class="campus-card-img"><img src="images/portfolio/chapman.jpg" alt="Chapman graduation photo" loading="lazy"></div>
+              <div class="campus-card-content"><span class="campus-card-name">Other Campus</span><span class="campus-card-months">CSUF, Chapman &amp; more</span></div>
+            </button>
           </div>
         </div>
-        <div class="fade-in stagger-2">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/guramrit-art/2026-graduation-season" style="min-width:320px;height:700px;"></div>
+
+        <!-- Panel 2: Calendly Calendar -->
+        <div id="campus-calendar" class="hidden">
+          <button class="booking-back-btn" id="calendar-back-btn">&larr; Back to campuses</button>
+          <h3 id="calendar-campus-name" style="margin-bottom:1rem;"></h3>
+          <div id="calendly-container"></div>
+        </div>
+
+        <!-- Panel 3: Inquiry Form -->
+        <div id="campus-inquiry" class="hidden">
+          <button class="booking-back-btn" id="inquiry-back-btn">&larr; Back to campuses</button>
+          <h3 style="margin-bottom:0.25rem;">Inquire About Your Campus</h3>
+          <p style="margin-bottom:1.5rem; font-size:0.9rem;">Fill out the form below and we'll get back to you within 24 hours.</p>
+          <form id="inquiry-form" class="inquiry-form">
+            <div class="inquiry-row">
+              <div class="inquiry-field">
+                <label for="inquiry-first">First Name</label>
+                <input type="text" id="inquiry-first" name="first_name" required>
+              </div>
+              <div class="inquiry-field">
+                <label for="inquiry-last">Last Name</label>
+                <input type="text" id="inquiry-last" name="last_name" required>
+              </div>
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-university">University</label>
+              <input type="text" id="inquiry-university" name="university" placeholder="e.g. Chapman, CSUF, UCLA" required>
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-dates">Potential Dates</label>
+              <input type="text" id="inquiry-dates" name="dates" placeholder="e.g. May 10-15, flexible weekends">
+            </div>
+            <div class="inquiry-field">
+              <label for="inquiry-info">Additional Info</label>
+              <textarea id="inquiry-info" name="additional_info" rows="3" placeholder="Group size, special requests, questions, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary" style="width:100%; margin-top:0.5rem;">Send Inquiry</button>
+          </form>
+          <div id="inquiry-success" class="hidden" style="text-align:center; padding:3rem 1.5rem;">
+            <h3 style="margin-bottom:0.75rem;">Inquiry Sent!</h3>
+            <p style="margin-bottom:1.5rem;">We'll get back to you within 24 hours. You can also reach us at <a href="tel:9493128300" style="color:var(--accent);">(949) 312-8300</a>.</p>
+            <button class="btn btn--secondary btn--small" id="inquiry-another-btn">Submit Another Inquiry</button>
+          </div>
         </div>
       </div>
     </div>
@@ -68,7 +111,6 @@
       <div class="footer-bottom"><span>&copy; 2026 UCI Grad Photos. All rights reserved.</span></div>
     </div>
   </footer>
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script src="js/main.js"></script>
 </body>
 </html>

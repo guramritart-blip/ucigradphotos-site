@@ -260,4 +260,173 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // -------------------------------------------------------
+  // 10. Image sliders (drag to scroll on desktop)
+  // -------------------------------------------------------
+  document.querySelectorAll('.img-slider').forEach(function (slider) {
+    var isDown = false;
+    var startX;
+    var scrollLeft;
+
+    slider.addEventListener('mousedown', function (e) {
+      isDown = true;
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('mouseleave', function () { isDown = false; });
+    slider.addEventListener('mouseup', function () { isDown = false; });
+    slider.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - slider.offsetLeft;
+      slider.scrollLeft = scrollLeft - (x - startX);
+    });
+  });
+
+  // -------------------------------------------------------
+  // 11. Campus booking widget
+  // -------------------------------------------------------
+  var campusSelector = document.getElementById('campus-selector');
+  var campusCalendar = document.getElementById('campus-calendar');
+  var campusInquiry = document.getElementById('campus-inquiry');
+
+  if (campusSelector) {
+    var CAMPUS_CONFIG = {
+      uci: {
+        name: 'UC Irvine',
+        months: 'May & June 2026',
+        calendlyUrl: 'https://calendly.com/guramrit-art/2026-graduation-season',
+        available: true
+      },
+      usc: {
+        name: 'USC',
+        months: 'April 2026',
+        calendlyUrl: 'https://calendly.com/guramrit-art/2026-graduation-season',
+        available: true
+      },
+      other: {
+        name: 'Other Campus',
+        available: false
+      }
+    };
+
+    function ensureCalendlyScript(cb) {
+      if (window.Calendly) { cb(); return; }
+      if (!document.querySelector('link[href*="calendly.com/assets/external/widget.css"]')) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        document.head.appendChild(link);
+      }
+      var existing = document.querySelector('script[src*="calendly.com"]');
+      if (existing) {
+        existing.addEventListener('load', cb);
+        return;
+      }
+      var script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      script.onload = cb;
+      document.head.appendChild(script);
+    }
+
+    function hideAllPanels() {
+      campusSelector.classList.add('hidden');
+      campusCalendar.classList.add('hidden');
+      campusInquiry.classList.add('hidden');
+    }
+
+    function showCalendar(config) {
+      hideAllPanels();
+      campusCalendar.classList.remove('hidden');
+      document.getElementById('calendar-campus-name').textContent = config.name;
+      var container = document.getElementById('calendly-container');
+      container.innerHTML = '';
+      ensureCalendlyScript(function () {
+        window.Calendly.initInlineWidget({
+          url: config.calendlyUrl,
+          parentElement: container
+        });
+      });
+    }
+
+    function showInquiry() {
+      hideAllPanels();
+      campusInquiry.classList.remove('hidden');
+      document.getElementById('inquiry-form').classList.remove('hidden');
+      document.getElementById('inquiry-success').classList.add('hidden');
+    }
+
+    function backToSelector() {
+      hideAllPanels();
+      campusSelector.classList.remove('hidden');
+      var container = document.getElementById('calendly-container');
+      if (container) container.innerHTML = '';
+    }
+
+    document.querySelectorAll('.campus-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var key = this.getAttribute('data-campus');
+        var config = CAMPUS_CONFIG[key];
+        if (!config) return;
+        if (config.available) {
+          showCalendar(config);
+        } else {
+          showInquiry();
+        }
+        var widget = document.getElementById('booking-widget');
+        if (widget) widget.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    document.getElementById('calendar-back-btn').addEventListener('click', backToSelector);
+    document.getElementById('inquiry-back-btn').addEventListener('click', backToSelector);
+
+    // Inquiry form submission (mailto fallback)
+    var inquiryForm = document.getElementById('inquiry-form');
+    if (inquiryForm) {
+      inquiryForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var first = document.getElementById('inquiry-first').value.trim();
+        var last = document.getElementById('inquiry-last').value.trim();
+        var university = document.getElementById('inquiry-university').value.trim();
+        var dates = document.getElementById('inquiry-dates').value.trim();
+        var info = document.getElementById('inquiry-info').value.trim();
+
+        var subject = 'Graduation Photo Inquiry - ' + university;
+        var body = 'Name: ' + first + ' ' + last +
+          '\nUniversity: ' + university +
+          '\nPotential Dates: ' + (dates || 'Not specified') +
+          '\nAdditional Info: ' + (info || 'None');
+
+        window.location.href = 'mailto:guramrit.art@gmail.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+        inquiryForm.classList.add('hidden');
+        document.getElementById('inquiry-success').classList.remove('hidden');
+      });
+    }
+
+    var inquiryAnotherBtn = document.getElementById('inquiry-another-btn');
+    if (inquiryAnotherBtn) {
+      inquiryAnotherBtn.addEventListener('click', function () {
+        inquiryForm.reset();
+        inquiryForm.classList.remove('hidden');
+        document.getElementById('inquiry-success').classList.add('hidden');
+      });
+    }
+
+    // Deep link support: contact.html?campus=uci
+    var params = new URLSearchParams(window.location.search);
+    var campusParam = params.get('campus');
+    if (campusParam && CAMPUS_CONFIG[campusParam]) {
+      var cfg = CAMPUS_CONFIG[campusParam];
+      if (cfg.available) {
+        showCalendar(cfg);
+      } else {
+        showInquiry();
+      }
+    }
+  }
+
 });
