@@ -703,6 +703,10 @@ p {
   align-items: start;
 }
 
+.pricing-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .pricing-card {
   background: var(--bg-card);
   border-radius: var(--r-lg);
