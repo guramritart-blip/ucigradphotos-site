@@ -706,6 +706,10 @@ p {
 .pricing-grid--2 {
   grid-template-columns: repeat(2, 1fr);
 }
+.pricing-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
 
 .pricing-card {
   background: var(--bg-card);
@@ -1304,6 +1308,7 @@ p {
   .portfolio-grid { grid-template-columns: repeat(4, 1fr); max-width: 700px; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid--4 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .contact-grid { gap: 3rem; }
 }
@@ -1330,7 +1335,7 @@ p {
   .image-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; border-radius: var(--r); }
   .portfolio-grid { grid-template-columns: repeat(4, 1fr); gap: 3px; max-width: 100%; border-radius: var(--r); }
   .cards-grid { grid-template-columns: 1fr; gap: 1rem; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .pricing-grid, .pricing-grid--4 { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
   .about-photos { grid-template-columns: 1fr 1fr; max-width: 400px; gap: 1rem; }
   .blog-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
