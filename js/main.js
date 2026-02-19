@@ -404,6 +404,12 @@ document.addEventListener('DOMContentLoaded', function () {
           method: 'POST',
           body: formBody
         }).then(function () {
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submission', {
+              event_category: 'inquiry',
+              event_label: data.university
+            });
+          }
           inquiryForm.classList.add('hidden');
           document.getElementById('inquiry-success').classList.remove('hidden');
         }).catch(function () {
