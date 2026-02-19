@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
       usc: {
         name: 'USC',
         months: 'April 2026',
-        calendlyUrl: 'https://calendly.com/guramrit-art/2026-graduation-season',
+        calendlyUrl: 'https://calendly.com/guramrit-art/2026-ucirvine-graduation-season-clone',
         available: true
       },
       other: {
@@ -387,23 +387,31 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inquiryForm) {
       inquiryForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        var first = document.getElementById('inquiry-first').value.trim();
-        var last = document.getElementById('inquiry-last').value.trim();
-        var university = document.getElementById('inquiry-university').value.trim();
-        var dates = document.getElementById('inquiry-dates').value.trim();
-        var info = document.getElementById('inquiry-info').value.trim();
+        var submitBtn = inquiryForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
 
-        var subject = 'Graduation Photo Inquiry - ' + university;
-        var body = 'Name: ' + first + ' ' + last +
-          '\nUniversity: ' + university +
-          '\nPotential Dates: ' + (dates || 'Not specified') +
-          '\nAdditional Info: ' + (info || 'None');
+        var data = {
+          first_name: document.getElementById('inquiry-first').value.trim(),
+          last_name: document.getElementById('inquiry-last').value.trim(),
+          university: document.getElementById('inquiry-university').value.trim(),
+          dates: document.getElementById('inquiry-dates').value.trim() || 'Not specified',
+          additional_info: document.getElementById('inquiry-info').value.trim() || 'None'
+        };
 
-        window.location.href = 'mailto:guramrit.art@gmail.com?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
-        inquiryForm.classList.add('hidden');
-        document.getElementById('inquiry-success').classList.remove('hidden');
+        var formBody = new URLSearchParams(data);
+        fetch('https://hooks.zapier.com/hooks/catch/26162536/ucr8ndy/', {
+          method: 'POST',
+          body: formBody
+        }).then(function () {
+          inquiryForm.classList.add('hidden');
+          document.getElementById('inquiry-success').classList.remove('hidden');
+        }).catch(function () {
+          alert('Something went wrong. Please try again or call us at (949) 312-8300.');
+        }).finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Inquiry';
+        });
       });
     }
 
