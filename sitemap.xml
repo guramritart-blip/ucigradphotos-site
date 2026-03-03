@@ -72,4 +72,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.ucigradphotos.com/blog/usc-graduation-photo-spots.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Spot Pages -->
+  <url><loc>https://www.ucigradphotos.com/spots/uci-aldrich-park-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-langson-library-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-infinity-fountain-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-peter-anteater-statue-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-peter-water-tower-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-uci-sign-bison-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-business-school-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-science-library-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-bren-events-center-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-social-science-gateway-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/uci-mstb-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-mudd-hall-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-tommy-trojan-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-traveler-horse-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-doheny-library-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-bovard-auditorium-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-steps-of-troy-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/spots/usc-shumway-fountain-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Area Pages -->
+  <url><loc>https://www.ucigradphotos.com/areas/irvine-graduation-photographer.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/areas/orange-county-graduation-photographer.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/areas/los-angeles-graduation-photographer.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/areas/anaheim-graduation-photographer.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.ucigradphotos.com/areas/newport-beach-graduation-photographer.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Program Pages -->
+  <url><loc>https://www.ucigradphotos.com/programs/uci-engineering-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/uci-business-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/uci-nursing-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/uci-law-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/uci-medicine-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/usc-engineering-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/usc-business-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/usc-nursing-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/usc-law-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.ucigradphotos.com/programs/usc-medicine-graduation-photos.html</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

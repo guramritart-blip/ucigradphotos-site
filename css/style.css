@@ -1349,4 +1349,37 @@ p {
   .lightbox-next { right: 0.75rem; }
   .lightbox-close { top: 0.75rem; right: 0.75rem; }
 
+  .quick-facts-grid { grid-template-columns: 1fr 1fr; }
+
+}
+
+/* Quick Facts Card (spot pages) */
+.quick-facts-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2rem;
+}
+.quick-facts-card h3 {
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+.quick-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.quick-facts-grid strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+.quick-facts-grid p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
