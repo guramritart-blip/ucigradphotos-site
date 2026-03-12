@@ -485,6 +485,11 @@ p {
   justify-content: center;
 }
 
+/* Short hero variant (booking page) */
+.hero-scroll--short {
+  min-height: 70vh;
+}
+
 /* ---- Portfolio Grid (4x4, compact portraits) ---- */
 .portfolio-grid {
   display: grid;
@@ -1328,6 +1333,7 @@ p {
 
   .scroll-track img { height: 180px; }
   .hero-scroll-bg { gap: 6px; }
+  .hero-scroll--short { min-height: 55vh; }
   .hero-scroll-content { padding: 1.5rem; }
   .hero-scroll-content .hero-buttons { flex-direction: column; }
   .hero-scroll-content .hero-buttons .btn { width: 100%; }
