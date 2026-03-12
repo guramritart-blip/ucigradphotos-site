@@ -392,15 +392,16 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = 'Sending...';
 
         var data = {
-          first_name: document.getElementById('inquiry-first').value.trim(),
-          last_name: document.getElementById('inquiry-last').value.trim(),
+          name: document.getElementById('inquiry-first').value.trim() + ' ' + document.getElementById('inquiry-last').value.trim(),
+          email: document.getElementById('inquiry-email').value.trim(),
+          phone: document.getElementById('inquiry-phone').value.trim() || 'Not provided',
           university: document.getElementById('inquiry-university').value.trim(),
           dates: document.getElementById('inquiry-dates').value.trim() || 'Not specified',
           additional_info: document.getElementById('inquiry-info').value.trim() || 'None'
         };
 
         var formBody = new URLSearchParams(data);
-        fetch('https://hooks.zapier.com/hooks/catch/26162536/ucr8ndy/', {
+        fetch('https://kjfwxivupfidxshrqvce.supabase.co/functions/v1/receive-inquiry?org=85b15fe8-4556-4442-bd02-ab6ebad0ea61', {
           method: 'POST',
           body: formBody
         }).then(function () {
